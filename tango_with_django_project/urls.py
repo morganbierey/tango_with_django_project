@@ -20,6 +20,8 @@ from rango import views
 
 urlpatterns = [
     path('', views.index, name='index'),
+    #added line below to solve error
+    path('rango/', include('rango.urls')),
     path('admin/', admin.site.urls),
     # The above maps any URLs starting with rango/ to be handled by rango.
     #path('admin/', admin.site.urls), #note hashed this line out when got and error when testing 3.6
