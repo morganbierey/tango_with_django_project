@@ -17,6 +17,9 @@ from django.contrib import admin
 from django.urls import path
 from django.urls import include
 from rango import views
+#below added ex 4.3
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('', views.index, name='index'),
@@ -26,4 +29,6 @@ urlpatterns = [
     # The above maps any URLs starting with rango/ to be handled by rango.
     #path('admin/', admin.site.urls), #note hashed this line out when got and error when testing 3.6
 
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+#added + static above in ex 4.3
